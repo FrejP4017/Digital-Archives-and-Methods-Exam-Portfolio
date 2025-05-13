@@ -1,1 +1,4 @@
-# Koleraepidemien-i-1850-ernes-K-benhavn
+# Digital Archives and Methods - Exam Portfolio 
+## Authors: Frej Søgård Primdahl, Lucas Emil Fomsgaard Christensen, Sidsel Skovhus Andersen and Stine Telling
+
+This 
