@@ -10,9 +10,7 @@ Date: 2025-03-21
 
 ## What the R.proj contains 
 
-  - 
-  - A danish equivalent of AUSmap with Esri layers, called DANmap
-  - DANmap - 11 layered map
+  - A danish equivalent of AUSmap with Esri layers, called DANmap - 11 layered map
   - Two maps (with and without clustering)
   - A map with with circles and markers, showing three key locations in the city of Aarhus
 
@@ -22,7 +20,7 @@ The visualisation illustrates a map over the city of Aarhus, where three key loc
 
 The three key locations are the ARoS Museum of Art, Latinerkvarteret, and the Aarhus Cathedral
 
-The visualisation is created using the Laflet package in R
+The visualisation is created using the Leaflet package in R
 
 
 
