@@ -1,1 +1,31 @@
+# Portfolie 5: Final Digital Project - Windows version
+This repository contains a data folder, figures folder, Rproj-file, two Rmd-files and two HTML files. 
+
+## Data folder
+It is recommended that the data folder does not get opened outside of R Studios, so the data does not get compromised. 
+
+The folder contains three csv-files which is the data used in the final digital project. 
+
+### kolera_copenhagen_1853.csv
+This csv-file is a table over registration of deaths and cases of cholera infection from 27 June 1853 to 4 October 1853, 
+collected by Sidsel Skovhus Andersen and extracted from newspapers of Berlingske Tidende in 1853.
+The spreadsheet in the file has been designed by Søren Kølholt Poder and contains fifteen columns: ID, Date, DayName, 
+first_day, last_day, new_cases, new_deaths, total_cases, total_deaths, permlink, Note, rel_growth_cases, rel_growth_deaths, 
+Daily Case Fatality, Annul Case Fatality Rate.
+
+### mediestream_aviser.csv
+This csv-file contains newspaper statistics among publishing houses in Copenhagen from 1850 - 1859, extracted from Mediestream 
+with Swapper UI on 2 May 2025. 
+The file contains sixteen columns: link, recordID, timestamp, pwa, cer, fulltext_org, pageUUID, editionUUID, titleUUID, 
+editionId, familyId, newspaper_page, newspaper_edition, lplace,  location_name, location_coordinates. 
+Regarding rows, there are 3579, which is equal to 3579 individual newspapers distributed to nine different publishing houses.
+
+### stopwordlist.csv
+This csv-file is a list of Danish words that have been found irrelevant for the project with one column named: word. 
+The words on the list mostly fall into the categories OCS misreads, verbs, adjectives, pronouns, numbers and adverbs. 
+Examples could be: “og”, “med”, “som”, “hun”, “han”, “ikke”, “4”, “ere”, “v” and “sra”.
+
+## figures 
+This folder contains the figures that from the R markdown scripts in png-format.
+There are three wordclouds, 
 
