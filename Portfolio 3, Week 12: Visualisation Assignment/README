@@ -1,6 +1,6 @@
 # Portfolio 3, Week 12: Visualisation Assignment
 
-This repository contains a R.proj and a visualisation that is a part of the portfolio 3, from week 12, which is a visualisation assignment
+This repository contains a StartWithLeaflet R project and a visualisation that is a part of the portfolio 3, from week 12, which is a visualisation assignment
 
 ## Project description
 
@@ -8,7 +8,7 @@ Authored by: Frej Søgård Primdahl, Lucas Emil Fomsgaard Christensen, Sidsel Sk
 
 Date: 2025-03-21
 
-## What the R.proj contains 
+## What StartWithLeaflet contains 
 
   - A danish equivalent of AUSmap with Esri layers, called DANmap - 11 layered map
   - Two maps (with and without clustering)
