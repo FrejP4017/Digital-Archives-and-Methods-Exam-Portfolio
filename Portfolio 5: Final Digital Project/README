@@ -1,1 +1,14 @@
+# Portfolio 5: Final Digital Project 
+This repository contains two folders:
+  - Mac version
+  - Windows version 
 
+## Mac version 
+This folder contains the data, figures and scripts that the Final Dgital Project consist of.
+This version of the project have been constructed on a Mac with MacOS Sequoia, version 15.4.1.
+It is recommended to use this version of the final project in case you have a mac. 
+
+## Windows version
+This folder contains the data, figures and scripts that the Final Dgital Project consist of.
+This version of the project have been constructed on a computer with Windows 11 Pro, version 24H2, OS-build: 26100.3915.
+It is recommended to use this version of the final project in case you have a computer with Windows. 
