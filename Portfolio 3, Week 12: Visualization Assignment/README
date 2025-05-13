@@ -11,8 +11,10 @@ Date: 2025-03-21
 ## What the R.proj contains 
 
   - 
-  - 
-  - A visualisation of three key locations in Aarhus city
+  - A danish equivalent of AUSmap with Esri layers, called DANmap
+  - DANmap - 11 layered map
+  - Two maps (with and without clustering)
+  - A map with with circles and markers, showing three key locations in the city of Aarhus
 
 ## What the visualisation shows
 
