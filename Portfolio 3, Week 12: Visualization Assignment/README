@@ -1,31 +1,26 @@
 # Portfolio 3, Week 12: Visualisation Assignment
 
-This repository contains a R.proj and a picture that is a part of the portfolio 3, from week 12, which is a visualisation assignment
-
-The project visualises the reign periods of danish monarchs
+This repository contains a R.proj and a visualisation that is a part of the portfolio 3, from week 12, which is a visualisation assignment
 
 ## Project description
 
 Authored by: Frej Søgård Primdahl, Lucas Emil Fomsgaard Christensen, Sidsel Skovhus Andersen and Stine Telling
 
-Date: 2025-03-05
+Date: 2025-03-21
 
-## What the HTML contains 
+## What the R.proj contains 
 
-  - Timelime of danish monarchs
-  - Duration of each monarchs reign
-  - The average duration of reign for all rulers
-  - The three longest ruling monarchs, calcuated in days
-  - Visualisation showing the kings' duration of reign through time
+  - 
+  - 
+  - A visualisation of three key locations in Aarhus city
 
-## View the HTML file
+## What the visualisation shows
 
-Acces the preview via HTMLPreview:
+The visualisation illustrates a map over the city of Aarhus, where three key locations are marked with blue circles
 
-Open HTML Page: https://htmlpreview.github.io/?https://github.com/FrejP4017/Koleraepidemien-i-1850-ernes-K-benhavn/blob/main/Portfolio%202%2C%20Week%2010%3A%20Danish%20Kings%20Assignment/Portfolio%202%2C%20Week%2010%2C%20Danish%20Kings%20Assignment.html
+The three key locations are the ARoS Museum of Art, Latinerkvarteret, and the Aarhus Cathedral
 
-# Purpose
+The visualisation is created using the Laflet package in R
 
-The purpose of the project is to present historical overview of danish monarchs, with a particular focus on their periods of reign
 
 
