@@ -1,4 +1,30 @@
 # Portfolio 2, Week 10: Danish Kings Assignment
-This repository contains a HTML file that is a part of 
 
-# 
+This repository contains a HTML file that is a part of the portfolio 2, from week 10 about danish monarchs
+
+The project visualizes the reign periods of danish monarchs
+
+## Project description
+
+Authored by: Frej Søgård Primdahl, Lucas Emil Fomsgaard Christensen, Sidsel Skovhus Andersen and Stine Telling
+
+Date: 2015-03-05
+
+## What the HTML contains 
+
+  - Timelime of danish monarchs
+  - Duration of each monarchs reign
+  - The average duration of reign for all rulers
+  - The three longest ruling monarchs, calcuated in days
+  - Visualization showing the kings' duration of reign through time
+
+## View the HTML file
+
+Acces the preview via HTMLPreview:
+
+Open HTML Page: https://htmlpreview.github.io/?https://github.com/FrejP4017/Koleraepidemien-i-1850-ernes-K-benhavn/blob/main/Portfolio%202%2C%20Week%2010%3A%20Danish%20Kings%20Assignment/Portfolio%202%2C%20Week%2010%2C%20Danish%20Kings%20Assignment.html
+
+# Purpose
+
+The purpose of the project is to present historical overview of danish monarchs, with a particular focus on their periods of reign
+
