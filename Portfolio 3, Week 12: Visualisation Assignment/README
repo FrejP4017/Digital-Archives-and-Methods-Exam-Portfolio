@@ -1,1 +1,27 @@
+# Portfolio 3, Week 12: Visualisation Assignment
+
+This repository contains a R.proj and a visualisation that is a part of the portfolio 3, from week 12, which is a visualisation assignment
+
+## Project description
+
+Authored by: Frej Søgård Primdahl, Lucas Emil Fomsgaard Christensen, Sidsel Skovhus Andersen and Stine Telling
+
+Date: 2025-03-21
+
+## What the R.proj contains 
+
+  - A danish equivalent of AUSmap with Esri layers, called DANmap - 11 layered map
+  - Two maps (with and without clustering)
+  - A map with with circles and markers, showing three key locations in the city of Aarhus
+
+## What the visualisation shows
+
+The visualisation illustrates a map over the city of Aarhus, where three key locations are marked with blue circles
+
+The three key locations are the ARoS Museum of Art, Latinerkvarteret, and the Aarhus Cathedral
+
+The visualisation is created using the Leaflet package in R
+
+
+
 
