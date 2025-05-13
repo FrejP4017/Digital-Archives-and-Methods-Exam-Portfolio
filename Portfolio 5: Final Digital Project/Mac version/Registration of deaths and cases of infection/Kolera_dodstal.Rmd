@@ -1,0 +1,117 @@
+---
+title: "Registration of deaths and cases of infection"
+subtitle: "scatterplots of death and cases of infection derived from data registered in Berlingske Tidende"
+author: "Frej Søgård Primdahl, Lucas Emil Fomsgaard Christensen, Sidsel Skovhus Andersen and Stine Telling"
+date: "2025-05-13"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Creating the workspace
+
+### Creating folders
+```{r, warning=FALSE}
+dir.create("data")
+dir.create("figures")
+```
+
+### Loading relevant libraries
+```{r, warning=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+```
+
+### Loading dataset
+```{r, warning=FALSE}
+kolera_dodstal <- read.csv2("data/kolera_copenhagen_1853.csv") 
+```
+
+### Showing the data
+```{r, warning=FALSE}
+glimpse(kolera_dodstal)
+```
+
+### omitting NA values
+```{r, warning=FALSE}
+na.omit("kolera_dodstal")
+```
+
+### Creating the dates as a datevalue
+```{r, warning=FALSE}
+kolera_dodstal$Date <- as.Date(kolera_dodstal$Date)
+```
+
+# Creating scatterplots
+
+### Creating graph over New deaths
+```{r New deaths, warning=FALSE}
+kolera_dodstal%>%
+  ggplot(aes(x = Date, y = new_deaths, color = new_deaths)) + 
+  geom_point() +
+  geom_smooth(method = "loess", color = "hotpink") +
+  theme_minimal() +
+  scale_color_gradient(low = "black", high = "hotpink") +
+  labs(
+    title = "New deaths during the cholera pandemic, 1853",
+    subtitle = "Dataregistrations from Berlingske Tidende",
+    x = "Date",
+    y = "Registrations"
+  )
+ggsave("figures/scatterplot_new_deaths.png")
+```
+
+### Creating graph over Total deaths
+```{r Total deaths, warning=FALSE}
+kolera_dodstal %>%
+  ggplot(aes(x = Date, y = total_deaths, color = total_deaths)) + 
+  geom_point() +
+  geom_smooth(method = "loess", color = "hotpink") +
+  theme_minimal() +
+  scale_color_gradient(low = "black", high = "hotpink")+
+  labs(
+    title = "Total deaths during the cholera pandemic, 1853",
+    subtitle = "Dataregistrations from Berlingske Tidende",
+    x = "Date",
+    y = "Registrations"
+  )
+ggsave("figures/scatterplot_total_deaths.png")
+```
+
+### Creating graph over New cases
+```{r New cases, warning=FALSE}
+kolera_dodstal %>%
+  ggplot(aes(x = Date, y = new_cases, color = new_cases)) + 
+  geom_point() +
+  geom_smooth(method = "loess", color = "darkblue") +
+  theme_minimal() +
+  scale_color_gradient(low = "darkblue", high = "lightblue") +
+  labs(
+    title = "New cases during the cholera pandemic, 1853",
+    subtitle = "Dataregistrations from Berlingske Tidende",
+    x = "Date",
+    y = "Registrations"
+  )
+ggsave("figures/scatterplot_new_cases.png")
+```
+
+### Creating graph over Total cases
+```{r Total cases, warning=FALSE}
+kolera_dodstal %>%
+  ggplot(aes(x = Date, y = total_cases, color = total_cases)) + 
+  geom_point() +
+  geom_smooth(method = "loess", color = "darkblue") +
+  theme_minimal() +
+  scale_color_gradient(low = "darkblue", high = "lightblue") +
+  labs(
+    title = "Total cases during the cholera pandemic, 1853",
+    subtitle = "Dataregistrations from Berlingske Tidende",
+    x = "Date",
+    y = "Registrations"
+  )
+ggsave("figures/scatterplot_total_cases.png")
+```
