@@ -45,3 +45,6 @@ The two HTML-files are named:
 These files contain the scripts for registration of deaths and cases of infection and textminig and wordcloud respectively
 for viewing purposes
 
+## Rproj-file
+This file is named: Koleraepidemien.Rproj
+This file can be used to open and see the scripts 
