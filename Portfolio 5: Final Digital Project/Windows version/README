@@ -15,7 +15,7 @@ Daily Case Fatality, Annul Case Fatality Rate.
 
 ### mediestream_aviser.csv
 This csv-file contains newspaper statistics among publishing houses in Copenhagen from 1850 - 1859, extracted from Mediestream 
-with Swapper UI on 2 May 2025. 
+with Swagger UI on May 2. 2025. 
 The file contains sixteen columns: link, recordID, timestamp, pwa, cer, fulltext_org, pageUUID, editionUUID, titleUUID, 
 editionId, familyId, newspaper_page, newspaper_edition, lplace,  location_name, location_coordinates. 
 Regarding rows, there are 3579, which is equal to 3579 individual newspapers distributed to nine different publishing houses.
@@ -27,7 +27,7 @@ Examples could be: “og”, “med”, “som”, “hun”, “han”, “ikke
 
 ## figures folder 
 This folder contains the figures that from the R markdown scripts in png-format.
-There are three wordclouds, one grapgh and four scatterplots. 
+There are three wordclouds, one graph and four scatterplots. 
 
 ## The two Rmd-files
 The two Rmd-files are named: 
