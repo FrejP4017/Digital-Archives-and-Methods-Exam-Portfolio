@@ -1,7 +1,7 @@
 # Digital Archives and Methods - Exam Portfolio 
 ## Authors: Frej Søgård Primdahl, Lucas Emil Fomsgaard Christensen, Sidsel Skovhus Andersen and Stine Telling
 
-This repository contains parts of the exam portfolio from the group containing Frej Søgård Primdahl, Lucas Emil Fomsgaard Christensen, Sidsel Skovhus Andersen and Stine Telling: 
+This repository contains the following parts of the exam portfolio from the group: Frej Søgård Primdahl, Lucas Emil Fomsgaard Christensen, Sidsel Skovhus Andersen and Stine Telling: 
   - Portfolio 2, Week 10: Danish Kings Assignment
   - Portfolio 3, Week 12: Visualisation Assignment
   - Portfolio 5: Final Digital Project 
