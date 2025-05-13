@@ -1,0 +1,338 @@
+---
+title: "Textmining and wordclouds"
+output: html_document
+date: "2025-05-13"
+subtitle: "Analysing data from Mediestream and creating wordclouds"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Organising the workplace
+### Creating folders
+```{r dir.create, warning=FALSE}
+dir.create("data")
+dir.create("figures")
+```
+
+### Loading libraries
+```{r libraries, warning=FALSE}
+library(tidyverse)
+library(tidytext)
+library(ggwordcloud)
+library(urltools)
+```
+
+### Getting data into R
+#### Havesting data directly from data folder
+```{r loading dataset 1, warning=FALSE}
+kolera_words <- read_csv("data/mediestream_aviser.csv")
+
+```
+
+
+
+# Analysing data from Mediestream
+
+### Analysing the publishing place and glimpsing the data
+```{r publishing place and glimpse, warning=FALSE}
+kolera_words %>%
+  count(lplace, sort = TRUE)
+
+glimpse(kolera_words)
+
+```
+
+### Sorting by publisher / publishing house
+```{r publishing house, warning=FALSE}
+kolera_words %>% 
+  count(familyId, sort = TRUE)
+```
+
+
+
+# Text mining
+
+### Creating a second dataframe called kolera_tidy 
+#### Each word now have their own seperate column
+```{r creating tidy dataframe, warning=FALSE}
+kolera_tidy <- kolera_words %>% 
+  unnest_tokens(word, fulltext_org)
+```
+
+### Counting the most frequent words without a stopwordlist
+```{r count without a stopwordlist, echo=TRUE, warning=FALSE}
+kolera_tidy %>% 
+  count(word, sort = TRUE)
+```
+
+### Loading stopwordlist
+```{r stopwordlist, echo=TRUE, warning=FALSE}
+stopord_kolera <- read_csv("data/stopwordlist.csv")
+```
+
+### Counting the most frequent words, including stopwordlist
+```{r count and stopwordlist, echo=TRUE, warning=FALSE}
+kolera_tidy %>%
+  anti_join(stopord_kolera, by ="word") %>%
+  count(word, sort = TRUE)
+```
+
+
+
+
+
+
+# Wordcloud 1 - most frequent words by year, 1850-1859
+
+### Creating a new dataframe called kolera_year_tidy
+#### Contains a new column, with years as values  
+```{r kolera_year_tidy, warning=FALSE}
+kolera_tidy %>% 
+  mutate(y=year(timestamp)) -> kolera_year_tidy
+```
+
+
+### Counting the most frequent words per year, with stopwordlist
+```{r most frequent words per year, warning=FALSE}
+kolera_year_tidy %>% 
+  anti_join(stopord_kolera, by ="word") %>%
+  count(word, y, sort = TRUE)
+```
+
+
+### Creating new dataframe called total_words
+#### Contains two columns; total mentitioning of words per year and year
+```{r total_words, warning=FALSE}
+kolera_year_tidy %>% 
+  count(word, y) %>% 
+  group_by(y) %>% 
+  summarise(total=sum(n)) -> total_words
+
+```
+
+
+### Creating new dataframe calld kolera_year_count
+#### Contains four columns; word, year, n-value and total mentioning of the word
+#### The n-value is how many times the word was mentioned in a given year
+```{r kolera_year_count, warning=FALSE}
+kolera_year_tidy %>% 
+  count(word, y, sort = TRUE) %>% 
+  left_join(total_words, by = "y") -> kolera_year_count
+
+```
+
+
+### Creating new dataframe called kolera_year_if_idf
+#### Couting the mentioning of the acccording to year, including stopwordlist
+#### Creating a frequency of the mentioned words per year, compared to the total orrence of words
+```{r kolera_year_if_idf, warning=FALSE}
+kolera_year_count %>% 
+  anti_join(stopord_kolera, by ="word") %>%
+  bind_tf_idf(word, y, n) -> kolera_year_if_idf
+
+```
+
+
+### Arranging the words in descending order by frequency value
+```{r descending order, warning=FALSE}
+kolera_year_if_idf %>% 
+  arrange(desc(tf_idf))
+
+```
+
+
+### Creating a wordcloud with the most frequent words sorted by year
+#### the figure is saved in the figures folder
+```{r wordcloud 1, warning=FALSE}
+kolera_year_if_idf %>%
+  arrange(desc(tf_idf)) %>%
+  mutate(word = factor(word, levels = rev(unique(word)))) %>% 
+  group_by(y) %>% 
+  top_n(8) %>% 
+  ungroup %>%
+  ggplot(aes(label = word, size = tf_idf, color = tf_idf)) +
+  geom_text_wordcloud_area() +
+  scale_size_area(max_size = 10) +
+  theme_minimal() +
+  facet_wrap(~y, ncol = 4, scales = "free") +
+  scale_color_gradient(low = "hotpink", high = "black") +
+  labs(
+      title = "Most frequent words pr. year from 1850-1859",
+       subtitle = "Determined by term frequency (tf) and inversed document frequency(idf)",
+      caption = "Data from Mediestream Experimental API"
+      )
+
+ggsave("figures/Wordcloud_1.png", width = 18, height = 13, units = "cm", bg = "white")
+```
+
+
+
+
+
+
+
+# Wordcloud 2 - Most frequent words by month in the year 1853
+### Creating a new dataframe called kolera_1853_tidy
+#### Including words only from the year 1853
+```{r kolera_1853_tidy, warning=FALSE}
+kolera_tidy %>% 
+  filter(year(timestamp) == 1853) -> kolera_1853_tidy
+
+```
+
+### Creating a new dataframe called kolera_month_1853_tidy
+#### Creating a new column containing months in 1853
+```{r kolera_month_1853_tidy, warning=FALSE}
+kolera_1853_tidy %>% 
+  mutate(m=month(timestamp)) -> kolera_month_1853_tidy
+
+```
+
+### Counting words per month in 1853 without stopwordlist
+```{r count - words per month - 1853, warning=FALSE}
+kolera_month_1853_tidy %>% 
+  count(word, m, sort = TRUE)
+
+```
+
+
+### Creating a new dataframe called total_words_1853
+#### Couting total words from 1853 grouped by month
+```{r total_words_1853, warning=FALSE}
+kolera_month_1853_tidy %>% 
+  count(word, m) %>% 
+  group_by(m) %>% 
+  summarise(total=sum(n)) -> total_words_1853
+
+```
+
+
+### Creating a new dataframe called kolera_month_1853_count
+#### Counting the words from 1853, by month, without a stopwordlist
+```{r kolera_month_1853_count, warning=FALSE}
+kolera_month_1853_tidy %>% 
+  count(word, m, sort = TRUE) %>% 
+  left_join(total_words_1853, by = "m") -> kolera_month_1853_count
+
+```
+
+
+### Creating a new framework called kolera_month_1853_if_idf
+#### Creating a frequency of the most mentioned words per month compared ro the total mentioning in 1853
+```{r kolera_month_1853_if_idf, warning=FALSE}
+kolera_month_1853_count %>% 
+  anti_join(stopord_kolera, by ="word") %>%
+  bind_tf_idf(word, m, n) -> kolera_month_1853_if_idf
+
+```
+
+
+### Arranging the words in descending order by frequency value
+```{r descending order - 1853, warning=FALSE}
+kolera_month_1853_if_idf %>% 
+  arrange(desc(tf_idf))
+
+```
+
+
+### Creating a wordcloud and visulizing the most mentioned words per word in 1853, including stopwordlist
+#### The figure is saved in the figures folder
+```{r wordcloud 2, warning=FALSE}
+kolera_month_1853_if_idf %>%
+  arrange(desc(tf_idf)) %>%
+  mutate(word = factor(word, levels = rev(unique(word)))) %>% 
+  group_by(m) %>% 
+  top_n(8) %>% 
+  ungroup %>%
+  ggplot(aes(label = word, size = tf_idf, color = tf_idf)) +
+  geom_text_wordcloud_area() +
+  scale_size_area(max_size = 15) +
+  theme_minimal() +
+  facet_wrap(~m, ncol = 4, scales = "free") +
+  scale_color_gradient(low = "blue", high = "darkblue") +
+  labs(
+      title = "Most frequent words per month in 1853",
+       subtitle = "Determined by term frequency (tf) and inversed document frequency(idf)",
+      caption = "Data from Mediestream Experimental API")
+
+ggsave("figures/Wordcloud_2.png", width = 18, height = 13, units = "cm", bg = "white")
+```
+
+
+# Wordcloud 3 - most frequent words in July, August and September in 1853
+### Creating a snapshot of the months July, August and September in 1853
+#### The figure is saved in the figures folder
+```{r wordcloud 3, warning=FALSE}
+kolera_month_1853_if_idf %>%
+  filter((m %in% 7:9))%>%
+  arrange(desc(tf_idf)) %>%
+  mutate(word = factor(word, levels = rev(unique(word)))) %>% 
+  group_by(m) %>% 
+  top_n(8) %>% 
+  ungroup %>%
+  ggplot(aes(label = word, size = tf_idf, color = tf_idf)) +
+  geom_text_wordcloud_area() +
+  scale_size_area(max_size = 17) +
+  theme_minimal() +
+  facet_wrap(~m, ncol = 4, scales = "free") +
+  scale_color_gradient(low = "blue", high = "darkblue") +
+  labs(
+      title = "Most frequent words in July, August and September in 1853",
+       subtitle = "Determined by term frequency (tf) and inversed document frequency(idf)",
+      caption = "Data from Mediestream Experimental API")
+
+ggsave("figures/Wordcloud_3.png", width = 18, height = 13, units = "cm", bg = "white")
+```
+
+
+
+# Graph 1 - Occurence of any word in relation to cholera in 1853
+
+### Creating a new dataframe called kolera_1853_mutated_words
+#### Contains all words with any connection to cholera, merged into one
+#### Created with data from the year 1853, grouped by month
+```{r Kolera_1853_mutated_words, warning=FALSE}
+kolera_1853_tidy %>%
+  mutate(m=month(timestamp)) %>%
+  filter(str_detect(word, "\\bkolera[a-zæøå]+|\\bstolera[a-zæøå]+|\\bkolrra[a-zæøå+]"))%>%
+    select(m,word)  %>%
+  count(word, m)-> kolera_1853_mutated_words
+```
+
+
+### Loading dataset
+```{r loading dataset, warning=FALSE}
+kolera_numbers <- read_csv2("data/kolera_copenhagen_1853.csv",na="NA")
+
+```
+
+### Showing the data
+```{r glimpse, warning=FALSE}
+glimpse(kolera_numbers, warning=FALSE)
+
+```
+
+
+### Creating the graph with points and lines
+```{r graph, warning=FALSE}
+kolera_1853_mutated_words %>%
+  filter(str_detect(word, "\\bkolera[a-zæøå]+|\\bstolera[a-zæøå]+|\\bkolrra[a-zæøå+]")) %>%
+  mutate(word = str_replace(word,"\\bkolera[a-zæøå,0-9,]+|\\bstolera[a-zæøå]+|\\bkolrra[a-zæøå]+[:graph:]*", "kolera")) %>%
+    select(m, word) %>%
+  count(word,m) %>%
+  ggplot(aes(x = m, y = n, line = word, color = word)) +
+  geom_line(color = "hotpink", size = 2) +
+  geom_point(color = "hotpink", size = 5) +
+  labs(
+      title = "Occurence of any word in relation to cholera",
+      subtitle = "Including OCR misreads", 
+      x = "Month",
+      y = "Number")+
+  scale_x_continuous(breaks = 1:12)
+
+ggsave("figures/graph.png")
+```
+
+
