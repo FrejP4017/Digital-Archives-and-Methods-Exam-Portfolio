@@ -23,15 +23,15 @@ Examples could be: “og”, “med”, “som”, “hun”, “han”, “ikke
 This folder contains the figures that from the R markdown scripts in png-format.
 There are three wordclouds and one graph.
 
-### The Rmd-file
+### The Rmd-file: Textmining and wordclouds.Rmd
 The Rmd-files are named: Textmining and wordclouds.Rmd
 The file contains the script for textminig and wordcloud for use in R
 
-### The HTML-file
+### The HTML-file: Textmining and wordclouds.html
 The HTML-files are named: Textmining and wordclouds.html
 The file contain the scripts for textminig and wordcloud for viewing purposes
 
-### Rproj-file
+### Rproj-file: Koleraepidemien.Rproj
 This file is named: Koleraepidemien.Rproj
 This file can be used to open and see the scripts 
 
@@ -57,15 +57,15 @@ Daily Case Fatality, Annul Case Fatality Rate
 This folder contains the figures that from the R markdown scripts in png-format.
 There are four scatterplot figures.
 
-### The Rmd-file
+### The Rmd-file: Kolera_dodstal.Rmd
 The Rmd-files are named: Kolera_dodstal.Rmd
 The file contains the script for textminig and wordcloud for use in R
 
-### The HTML-file
+### The HTML-file: Regstraton of deaths and cases of infection.html
 The HTML-files are named: Regstraton of deaths and cases of infection.html
 The file contain the scripts for textminig and wordcloud for viewing purposes
 
-### Rproj-file
+### Rproj-file: Kolera_Dødstal.Rproj
 This file is named: Kolera_Dødstal.Rproj
 This file can be used to open and see the scripts 
 
