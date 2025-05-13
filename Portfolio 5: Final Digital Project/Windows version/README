@@ -3,7 +3,6 @@ This repository contains a data folder, figures folder, Rproj-file, two Rmd-file
 
 ## Data folder
 It is recommended that the data folder does not get opened outside of R Studios, so the data does not get compromised. 
-
 The folder contains three csv-files which is the data used in the final digital project. 
 
 ### kolera_copenhagen_1853.csv
@@ -25,6 +24,7 @@ This csv-file is a list of Danish words that have been found irrelevant for the 
 The words on the list mostly fall into the categories OCS misreads, verbs, adjectives, pronouns, numbers and adverbs. 
 Examples could be: “og”, “med”, “som”, “hun”, “han”, “ikke”, “4”, “ere”, “v” and “sra”.
 
+
 ## figures folder 
 This folder contains the figures that from the R markdown scripts in png-format.
 There are three wordclouds, one graph and four scatterplots. 
@@ -33,7 +33,6 @@ There are three wordclouds, one graph and four scatterplots.
 The two Rmd-files are named: 
   - Registration of deaths and cases of infection.Rmd
   - Textmining and wordclouds.Rmd
-
 These files contain the scripts for registration of deaths and cases of infection and textminig and wordcloud respectively 
 for use in R
 
@@ -41,7 +40,6 @@ for use in R
 The two HTML-files are named:
   - Registration of deaths and cases of incfection.html
   - Textmining and wordclouds.html
-
 These files contain the scripts for registration of deaths and cases of infection and textminig and wordcloud respectively
 for viewing purposes
 
