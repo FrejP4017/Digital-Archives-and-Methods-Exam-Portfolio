@@ -1,1 +1,45 @@
+# Portfolie 5: Final Digital Project - Windows version
+This repository contains two folders:
+  - Koleraepidemien - wordclouds
+  - Registration of deaths and cases of infection
+
+These folders each lead to their own data, figures, Rproj-file, Rmd-file and HTML file. 
+
+## Koleraepidemien - wordclouds 
+This repository contains data folder, figures folder, a Rproj-file, a Rmd-file and a HTML-file
+
+### Data folder
+It is recommended that the data folder does not get opened outside of R Studios, so the data does not get compromised. 
+The folder contains one csv-files which is the data used in the final digital project. The file is called stopwordlist.csv
+Other data is retrieved directly from the internet via link. 
+
+### stopwordlist.csv
+This csv-file is a list of Danish words that have been found irrelevant for the project with one column named: word. 
+The words on the list mostly fall into the categories OCS misreads, verbs, adjectives, pronouns, numbers and adverbs. 
+Examples could be: “og”, “med”, “som”, “hun”, “han”, “ikke”, “4”, “ere”, “v” and “sra”.
+
+
+### figures folder
+This folder contains the figures that from the R markdown scripts in png-format.
+There are three wordclouds and one graph.
+
+### The Rmd-file
+The Rmd-files are named: Textmining and wordclouds.Rmd
+
+The file contains the script for textminig and wordcloud for use in R
+
+### The HTML-file
+The HTML-files are named:Textmining and wordclouds.html
+
+The file contain the scripts for textminig and wordcloud for viewing purposes
+
+
+##Rproj-file
+This file is named: Koleraepidemien.Rproj
+This file can be used to open and see the scripts 
+
+
+
+
+
 
