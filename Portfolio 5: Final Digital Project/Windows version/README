@@ -2,11 +2,10 @@
 This repository contains a data folder, figures folder, Rproj-file, two Rmd-files and two HTML files. 
 
 Textmining and wordclouds:
-HTML Preview: https://htmlpreview.github.io/?https://raw.githubusercontent.com/FrejP4017/Digital-Archives-and-Methods-Exam-Portfolio/refs/heads/main/Portfolio%205%3A%20Final%20Digital%20Project/Windows%20version/Textmining-and-wordclouds.html 
+  HTMLPreview: https://htmlpreview.github.io/?https://raw.githubusercontent.com/FrejP4017/Digital-Archives-and-Methods-Exam-Portfolio/refs/heads/main/Portfolio%205%3A%20Final%20Digital%20Project/Windows%20version/Textmining-and-wordclouds.html
 
 Registration of deaths and cases of incfection:
-HTML Preview: https://htmlpreview.github.io/?https://raw.githubusercontent.com/FrejP4017/Digital-Archives-and-Methods-Exam-Portfolio/refs/heads/main/Portfolio%205%3A%20Final%20Digital%20Project/Windows%20version/Registration-of-deaths-and-cases-of-incfection.html
-
+  HTMLPreview:
 
 ## Data folder
 It is recommended that the data folder does not get opened outside of R Studios, so the data does not get compromised. 
