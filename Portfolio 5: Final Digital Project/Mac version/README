@@ -1,14 +1,14 @@
 # Portfolie 5: Final Digital Project - Windows version
 This repository contains two folders:
   - Koleraepidemien - wordclouds
-    - HTML Preview file: https://htmlpreview.github.io/?https://raw.githubusercontent.com/FrejP4017/Digital-Archives-and-Methods-Exam-Portfolio/refs/heads/main/Portfolio%205%3A%20Final%20Digital%20Project/Mac%20version/Koleraepidemien%20-%20wordclouds/Textmining-and-wordclouds.html
-  - Registration of deaths and cases of infection
-    - HTML Preview file: https://htmlpreview.github.io/?https://raw.githubusercontent.com/FrejP4017/Digital-Archives-and-Methods-Exam-Portfolio/refs/heads/main/Portfolio%205%3A%20Final%20Digital%20Project/Mac%20version/Registration%20of%20deaths%20and%20cases%20of%20infection/Registration%20of%20deaths%20and%20cases%20of%20infection%20.html 
+  - Registration of deaths and cases of infection 
 These folders each lead to their own data, figures, Rproj-file, Rmd-file and HTML file. 
 
 
 ## Koleraepidemien - wordclouds 
 This repository contains data folder, figures folder, a Rproj-file, a Rmd-file and a HTML-file
+
+HTML Preview file: HTML Preview file: https://htmlpreview.github.io/?https://raw.githubusercontent.com/FrejP4017/Digital-Archives-and-Methods-Exam-Portfolio/refs/heads/main/Portfolio%205%3A%20Final%20Digital%20Project/Mac%20version/Koleraepidemien%20-%20wordclouds/Textmining-and-wordclouds.html
 
 ### Data folder
 It is recommended that the data folder does not get opened outside of R Studios, so the data does not get compromised. 
@@ -40,6 +40,8 @@ This file can be used to open and see the scripts
 
 ## Registration of deaths and cases of infection 
 This repository contains data folder, figures folder, a Rproj-file, a Rmd-file and a HTML-file
+
+HTML Preview file: HTML Preview file: https://htmlpreview.github.io/?https://raw.githubusercontent.com/FrejP4017/Digital-Archives-and-Methods-Exam-Portfolio/refs/heads/main/Portfolio%205%3A%20Final%20Digital%20Project/Mac%20version/Registration%20of%20deaths%20and%20cases%20of%20infection/Registration%20of%20deaths%20and%20cases%20of%20infection%20.html
 
 ### Data folder 
 It is recommended that the data folder does not get opened outside of R Studios, so the data does not get compromised. 
