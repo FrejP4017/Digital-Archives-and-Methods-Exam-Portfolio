@@ -1,8 +1,12 @@
 # Portfolie 5: Final Digital Project - Windows version
 This repository contains a data folder, figures folder, Rproj-file, two Rmd-files and two HTML files. 
 
-Textmining 
+Textmining and wordclouds:
 HTML Preview: https://htmlpreview.github.io/?https://raw.githubusercontent.com/FrejP4017/Digital-Archives-and-Methods-Exam-Portfolio/refs/heads/main/Portfolio%205%3A%20Final%20Digital%20Project/Windows%20version/Textmining-and-wordclouds.html 
+
+Registration of deaths and cases of incfection:
+HTML Preview: 
+
 
 ## Data folder
 It is recommended that the data folder does not get opened outside of R Studios, so the data does not get compromised. 
@@ -34,15 +38,15 @@ There are three wordclouds, one graph and four scatterplots.
 
 ## The two Rmd-files
 The two Rmd-files are named: 
-  - Registration of deaths and cases of infection.Rmd
   - Textmining and wordclouds.Rmd
+  - Registration of deaths and cases of infection.Rmd
 These files contain the scripts for registration of deaths and cases of infection and textminig and wordcloud respectively 
 for use in R
 
 ## The two HTML-files
 The two HTML-files are named:
-  - Registration of deaths and cases of incfection.html
   - Textmining and wordclouds.html
+  - Registration of deaths and cases of incfection.html
 These files contain the scripts for registration of deaths and cases of infection and textminig and wordcloud respectively
 for viewing purposes
 
