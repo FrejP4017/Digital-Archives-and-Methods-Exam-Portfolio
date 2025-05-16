@@ -1,6 +1,8 @@
 # Portfolie 5: Final Digital Project - Windows version
 This repository contains a data folder, figures folder, Rproj-file, two Rmd-files and two HTML files. 
 
+HTML Preview: 
+
 ## Data folder
 It is recommended that the data folder does not get opened outside of R Studios, so the data does not get compromised. 
 The folder contains three csv-files which is the data used in the final digital project. 
