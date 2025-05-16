@@ -8,7 +8,6 @@ This repository contains the following parts of the exam portfolio from the grou
 
 ### Portfolio 2, Week 10: Danish Kings Assignment
 This repository contains a README, html-file and a HTMLPreview Link which is all part of the group´s answer to the given assignment
-HTML Preview: https://htmlpreview.github.io/?https://github.com/FrejP4017/Koleraepidemien-i-1850-ernes-K-benhavn/blob/main/Portfolio%202%2C%20Week%2010%3A%20Danish%20Kings%20Assignment/Portfolio%202%2C%20Week%2010%2C%20Danish%20Kings%20Assignment.html 
 
 ### Portfolio 3, Week 12: Visualisation Assignment
 This respository contains a README, Rproj-file and png-file which is all part of the group´s answer to given assignment
