@@ -10,7 +10,7 @@ This repository contains the following parts of the exam portfolio from the grou
 This repository contains a README, html-file and a HTMLPreview Link which is all part of the group´s answer to the given assignment
 
 ### Portfolio 3, Week 12: Visualisation Assignment
-This repository contains a README, Rproj-file and png-file which is all part of the group´s answer to given the assignment
+This repository contains a README, Rproj-file and png-file which is all part of the group´s answer to the given assignment
 
 ### Portfolio 5: Final Digital Project
 This repository contains the group´s final digital project for the exam portfolio. 
